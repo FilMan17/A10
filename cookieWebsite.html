@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Cookie Website</title>
+</head>
+<body onload="getCookie()">
+	<main>
+        <section>
+            <label for="fullName"><strong>Full Name:</strong></label>
+            <input type="text" id="fullName" name="fullName"><br><br>
+            <button onclick="getData(); clearButton()">Submit</button><br><br>
+            <p id="cookieDisplay"></p>
+        </section>
+	</main>
+    <footer>
+		<p>&copy; Filip Mangoski - November 19, 2024</p>
+	</footer>
+</body>
+</html>
+<style>
+    label {
+        font-size: 200%;
+    }
+
+    input {
+        width: 25%;
+        font-size: 125%;
+    }
+
+    button {
+        font-size: 150%;
+    }
+
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-color: #931420;
+        text-align: center;
+	    color: white;
+        font-size: 150%;
+        width: 100%;
+    }
+</style>
+<script>
+    function getCookie() {
+    }
+
+    function getData() {
+        let input = document.getElementById("fullName");
+        let inputValue = input.value;
+        
+        makeCookie(inputValue);
+    }
+
+    function clearButton() {
+        document.getElementById("fullName").value = "";
+    }
+
+    function makeCookie(cValue) {
+        document.cookie = "username=Filip;";
+        const allCookies = document.cookie;
+        document.getElementById("displayCookie").value = allCookies;
+    }
+</script>
