@@ -11,6 +11,7 @@
             <label for="fullName"><strong>Full Name:</strong></label>
             <input type="text" id="fullName" name="fullName"><br><br>
             <button onclick="getData(); clearButton()">Submit</button><br><br>
+            <p id="displayCookie"></p>
         </section>
 	</main>
     <footer>
@@ -71,9 +72,6 @@
         document.cookie = "fullname=" + cValue + "; expires=" + date.toUTCString();
         const allCookies = document.cookie;
 
-        var section = document.getElementsByTagName('section');
-        p = document.createElement("p");
-        p = allCookies;
-        section[0].append(p);
+        document.getElementById("displayCookie").innerText = allCookies;
     }
 </script>
