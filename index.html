@@ -45,6 +45,12 @@
 </style>
 <script>
     function getCookie() {
+        const allCookies = document.cookie;
+
+        var section = document.getElementsByTagName('section');
+        p = document.createElement("p");
+        p = allCookies;
+        section[0].append(p);
     }
 
     function getData() {
@@ -59,7 +65,10 @@
     }
 
     function makeCookie(cValue) {
-        document.cookie = "fullname=" + cValue + ";";
+        let date = new Date();
+        date.setTime(date.getTime() + (1 * 24 * 60 * 60 * 1000));
+
+        document.cookie = "fullname=" + cValue + "; expires=" + date.toUTCString();
         const allCookies = document.cookie;
 
         var section = document.getElementsByTagName('section');
