@@ -46,7 +46,9 @@
 </style>
 <script>
     function getCookie() {
+        const allCookies = document.cookie;
 
+        document.getElementById("displayCookie").innerText = allCookies;
     }
 
     function getData() {
